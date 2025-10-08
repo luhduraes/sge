@@ -1,0 +1,20 @@
+{
+  // Define o Prettier como o formatador padrão para todos os arquivos
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // Ativa a formatação automática sempre que você salvar um arquivo
+  "editor.formatOnSave": true,
+
+  // ✅ AQUI ESTÁ A CORREÇÃO
+  // Diz ao VS Code para executar as correções do ESLint explicitamente ao salvar.
+  // O valor agora é uma string "explicit" em vez do booleano 'true'.
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // Garante que o ESLint funcione corretamente em nosso projeto com subpastas
+  "eslint.workingDirectories": [
+    { "directory": "backend", "changeProcessCWD": true },
+    { "directory": "frontend", "changeProcessCWD": true }
+  ]
+}
